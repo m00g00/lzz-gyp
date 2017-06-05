@@ -1,13 +1,13 @@
 'use strict';
-var fs = require('fs');
 var path = require('path');
 var exec = require('./lib/exec');
 
+var buildNewLzz = true;
 var lzz = './lzz-source/lazycpp';
 switch (process.platform) {
-	case 'darwin': lzz = './lzz-compiled/osx'; break;
-	case 'win32': lzz = './lzz-compiled/windows.exe'; break;
-	case 'linux': lzz = './lzz-compiled/linux'; break;
+	case 'darwin': lzz = './lzz-compiled/osx'; buildNewLzz = false; break;
+	case 'win32': lzz = './lzz-compiled/windows.exe'; buildNewLzz = false; break;
+	case 'linux': lzz = './lzz-compiled/linux'; buildNewLzz = false; break;
 }
 lzz = path.join(__dirname, lzz);
 
@@ -24,9 +24,7 @@ module.exports = function (args, moduleDir, debug) {
 	}
 	
 	var prerequisite = Promise.resolve();
-	try {
-		fs.accessSync(lzz, fs.constants.F_OK | fs.constants.X_OK);
-	} catch (err) {
+	if (buildNewLzz) {
 		prerequisite = exec('make', ['-f', 'Makefile.release'], path.dirname(lzz));
 	}
 	
