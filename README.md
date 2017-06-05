@@ -1,5 +1,5 @@
 # node-lzz
-Easy lazycplusplus integration for native node addons.
+Easy lazycplusplus integration for native nodejs addons.
 
 ## Installation
 
