@@ -3,7 +3,7 @@
 
 #include "util_GetTempDir.h"
 // std lib
-#include <unistd.h> // This line was added as part of the node-lzz project (https://github.com/JoshuaWise/node-lzz), and is not part of the original lazycplusplus project (http://www.lazycplusplus.com/index.html)
+#include <unistd.h> // This line was added as part of the lzz-gyp project (https://github.com/JoshuaWise/lzz-gyp), and is not part of the original lazycplusplus project (http://www.lazycplusplus.com/index.html)
 #include <assert.h>
 #include <cstdio>
 #include <cstdlib>

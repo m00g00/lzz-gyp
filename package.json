@@ -1,5 +1,5 @@
 {
-  "name": "lzz",
+  "name": "lzz-gyp",
   "version": "0.2.0",
   "description": "Lazycplusplus integration for native nodejs addons.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoshuaWise/node-lzz.git"
+    "url": "git+https://github.com/JoshuaWise/lzz-gyp.git"
   },
   "keywords": [
     "c++",
@@ -20,7 +20,7 @@
   "author": "Joshua Wise <joshuathomaswise@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/JoshuaWise/node-lzz/issues"
+    "url": "https://github.com/JoshuaWise/lzz-gyp/issues"
   },
-  "homepage": "https://github.com/JoshuaWise/node-lzz#readme"
+  "homepage": "https://github.com/JoshuaWise/lzz-gyp#readme"
 }
