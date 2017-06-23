@@ -4,7 +4,7 @@ var exec = require('./lib/exec');
 
 var buildNewLzz = true;
 var lzz = './lzz-source/lazycpp';
-if (!/^(1|true|yes|on)$|/i.test(process.env.LZZ_COMPAT)) {
+if (!/^(1|true|yes|on)$/i.test(process.env.LZZ_COMPAT)) {
 	switch (process.platform) {
 		case 'darwin': lzz = './lzz-compiled/osx'; buildNewLzz = false; break;
 		case 'win32': lzz = './lzz-compiled/windows.exe'; buildNewLzz = false; break;
