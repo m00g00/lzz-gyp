@@ -4,10 +4,12 @@ var exec = require('./lib/exec');
 
 var buildNewLzz = true;
 var lzz = './lzz-source/lazycpp';
-switch (process.platform) {
-	case 'darwin': lzz = './lzz-compiled/osx'; buildNewLzz = false; break;
-	case 'win32': lzz = './lzz-compiled/windows.exe'; buildNewLzz = false; break;
-	case 'linux': lzz = './lzz-compiled/linux'; buildNewLzz = false; break;
+if (!/^(1|true|yes|on)$|/i.test(process.env.LZZ_COMPAT)) {
+	switch (process.platform) {
+		case 'darwin': lzz = './lzz-compiled/osx'; buildNewLzz = false; break;
+		case 'win32': lzz = './lzz-compiled/windows.exe'; buildNewLzz = false; break;
+		case 'linux': lzz = './lzz-compiled/linux'; buildNewLzz = false; break;
+	}
 }
 lzz = path.join(__dirname, lzz);
 
@@ -22,12 +24,12 @@ module.exports = function (args, moduleDir, debug) {
 	if (arguments.length < 3) {
 		debug = process.env.NODE_ENV !== 'production';
 	}
-	
+
 	var prerequisite = Promise.resolve();
 	if (buildNewLzz) {
 		prerequisite = exec('make', ['-f', 'Makefile.release'], path.dirname(lzz));
 	}
-	
+
 	var gypArgs = debug ? ['rebuild', '--debug'] : ['rebuild'];
 	args = args.slice();
 	return prerequisite
