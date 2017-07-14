@@ -9,6 +9,8 @@ if (!/^(1|true|yes|on)$/i.test(process.env.LZZ_COMPAT)) {
 		case 'darwin': lzz = './lzz-compiled/osx'; buildNewLzz = false; break;
 		case 'win32': lzz = './lzz-compiled/windows.exe'; buildNewLzz = false; break;
 		case 'linux': lzz = './lzz-compiled/linux'; buildNewLzz = false; break;
+		case 'freebsd': lzz = './lzz-compiled/bsd'; buildNewLzz = false; break;
+		// case 'sunos': lzz = './lzz-compiled/illumos'; buildNewLzz = false; break;
 	}
 }
 lzz = path.join(__dirname, lzz);
