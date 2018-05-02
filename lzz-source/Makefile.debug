@@ -8,8 +8,8 @@
 #
 
 # build target specs
-CC = g++
-CFLAGS = -g -DDEBUG -D_DEBUG 
+#CC = g++
+#CFLAGS = -g -DDEBUG -D_DEBUG 
 OUT_DIR = debug_build
 LIBS =
 

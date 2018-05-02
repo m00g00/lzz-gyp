@@ -8,8 +8,8 @@
 #
 
 # build target specs
-CC = g++
-CFLAGS = -O3 
+#CC = g++
+#CFLAGS = -O3 
 OUT_DIR = release_build
 LIBS =
 
