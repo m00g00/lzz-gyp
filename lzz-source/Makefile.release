@@ -8,7 +8,7 @@
 #
 
 # build target specs
-#CC = g++
+CC = $(CXX)
 #CFLAGS = -O3 
 OUT_DIR = release_build
 LIBS =
